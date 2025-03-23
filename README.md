@@ -1,5 +1,7 @@
 
-# LLM Multi-Round Coding Tournament
+# LLM Multi-Round Coding Tournament: Getting the Best of All Worlds
+
+*Written on 3/22/2025 by Jeffrey Emanuel*
 
 ![LLM Tournament](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/llm_tournament_illustration.webp)
 
@@ -500,7 +502,9 @@ This tournament approach represents not just a clever trick for better code gene
 
 ## Conclusions
 
-I think this worked out really well. The final algorithm from Claude 3.7 Sonnet was able to do a pretty good job of fixing the tables, and I think it was able to do so in a way that was pretty close to the original intent of the tables. As smart and capable as these models are, it would be a lot to ask them to be able to make such an elaborate and sophisticated system all in a single shot. The chance to see multiple solutions from different "brains" and then collaboratively figure out how to best blend the ideas together really allowed the models to shine and show off their strengths. Besides being useful and generating better results than you could get from any of the models on their own, it's also fascinating from a purely theoretical perspective to see how the code evolves over time; in some cases, it's not a monotonic increase in code quality or performance, and there appeared to be some "model collapse" moments where the solution code would get markedly shorter and less sophisticated for a round or two, before recovering. Notably, Claude 3.7 Sonnet seemed to get longer and better with each round.
+I think this worked out really well. The final algorithm from Claude 3.7 Sonnet was able to do a pretty good job of fixing the tables, and I think it was able to do so in a way that was pretty close to the original intent of the tables. As smart and capable as these models are, it would be a lot to ask them to be able to make such an elaborate and sophisticated system all in a single shot. The chance to see multiple solutions from different "brains" and then collaboratively figure out how to best blend the ideas together really allowed the models to shine and show off their strengths.
+
+Besides being useful and generating better results than you could get from any of the models on their own, it's also fascinating from a purely theoretical perspective to see how the code evolves over time; in some cases, it's not a monotonic increase in code quality or performance, and there appeared to be some "model collapse" moments where the solution code would get markedly shorter and less sophisticated for a round or two, before recovering. Notably, Claude 3.7 Sonnet seemed to get longer and better with each round.
 
 The main drawback of this approach is how annoying it is to manually manage the entire process. That's why I decided to automate the entire thing using Andrew Ng's nice [`aisuite`](https://github.com/andrewyng/aisuite) package for Python, which abstracts away all the idiosyncrasies of the different models and their APIs, and allows you to easily run the same prompt on multiple models. Note that grok3 does not yet have an api, so I substituted that model with Mistral's `mistral-large-latest` model instead. Also, I didn't feel like spending the money on the o1-pro API, so I used gpt-4o instead.
 
@@ -524,7 +528,9 @@ PS: I ended up having to change the way I extracted the code from the responses 
 
 That would still have all sorts of weird edge cases, and what's much worse, it would only work for Python code! No, I realized that using brittle old ways was not the way. Instead, I should just rely on Claude 3.7 to do exactly what was needed. Once I swapped out hundreds of lines of python methods for a handful of lines of mostly English language prompting, everything suddenly started working perfectly.
 
-But seriously, it works so well! You just put your coding prompt in the `challenge_prompt.md` file and create a sample input file (this could be anything, it's totally generic) and then run the script like this ( note that this shows a run where I had already run it earlier, so it intelligently saves the responses and doesn't need to re-submit the requests to the LLM APIs; this saves a lot of time and money in case something goes wrong partway through the process):
+You can see all the details of the fully automated tournament process in the [llm_tournament.py](https://github.com/Dicklesworthstone/llm-tournament/blob/main/llm_tournament.py) code file, which is amazingly just 1,646 lines of code despite doing all the work of running the tournament and extracting the code from the responses. To put that into perspective, the final combined code from all the models and rounds for the markdown table fixing was 3,492 lines (see [here](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/fix_markdown_tables_tournament.py)), and for the messy CSV challenge, it was 7,952 lines! See [here](https://github.com/Dicklesworthstone/llm-tournament/blob/main/tournament_results/test_all_solutions.py) for that code file. The coolest part of that last file is that it was 100% generated automatically. Not just the various code blocks, but the entire file structure and the code that runs the tests and compares the results. It's all generated by the `llm_tournament.py` file. Pretty cool, huh?
+
+Seriously, it works so well! You just put your coding prompt in the `challenge_prompt.md` file and create a sample input file (this could be anything, it's totally generic) and then run the script like this ( note that this shows a run where I had already run it earlier, so it intelligently saves the responses and doesn't need to re-submit the requests to the LLM APIs; this saves a lot of time and money in case something goes wrong partway through the process):
 
 ```bash
 ❯ python llm_tournament.py --prompt challenge_prompt.md --test-file messy_csv_sample.csv
@@ -795,3 +801,7 @@ And then you can look at the results in the `tournament_results` folder. It's pr
 And the generated output files using the code for each model and round can be found here:
 
 [`output_results_for_each_round_and_model`](https://github.com/Dicklesworthstone/llm-tournament/tree/main/output_results_for_each_round_and_model)
+
+You can actually use this yourself to help you write really good and powerful code that is way, way better than any of these models could ever do on their own. Give it a try and let me know what you build with it!
+
+-Jeff
