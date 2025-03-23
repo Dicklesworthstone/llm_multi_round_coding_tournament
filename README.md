@@ -1,6 +1,8 @@
 
 # LLM Multi-Round Coding Tournament
 
+![LLM Tournament](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/llm_tournament_illustration.webp)
+
 ## The Simple Version
 
 For the past month or so, I've had a lot of success with a simple but powerful technique for using LLM models to help me write code. I'll give the same exact coding prompt to multiple different models.
@@ -57,7 +59,11 @@ OK, so step one is to craft our initial prompt, which we will include in all sub
 ---
 
 ```markdown
-I want you to make me a super sophisticated yet performant python function called "fix_invalid_markdown_tables" that takes markdown text as input and looks for tables that are invalid, then diagnoses what is wrong with them, and fixes them in a minimally invasive way. The function should make no change at all to any tables that ARE valid, and it should skip over any non-table content completely. 
+I want you to make me a super sophisticated yet performant python function called 
+"fix_invalid_markdown_tables" that takes markdown text as input and looks for tables 
+that are invalid, then diagnoses what is wrong with them, and fixes them in a minimally 
+invasive way. The function should make no change at all to any tables that ARE valid, 
+and it should skip over any non-table content completely. 
 
 Here are examples of invalid tables it should be able to fix:
 
