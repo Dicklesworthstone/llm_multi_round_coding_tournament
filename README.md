@@ -48,11 +48,11 @@ I included 3 examples of invalid tables that arose naturally through the use of 
 
 That is, they are filled with bizarre and ugly practices, like merged cells that span multiple columns, spurious empty columns, columns created just for the purpose of holding a "$" sign or even a ")" for negative numbers, and tables that contain footnotes.
 
-All of these elements violate basic assumptions of markdown's table formatting rules, which emphasize simplicity. At the same time, there's really no good reason that the vast majority of such tables couldn't be re-imagined in a way that would include the same information but in a way that works well enough with markdown— at least so they don't appear as a jumbled mess.
+All of these elements violate basic assumptions of markdown's table formatting rules, which emphasize simplicity. At the same time, there's really no good reason that the vast majority of such tables couldn't be re-imagined in a way that would include the same information, but in a way that works well enough with markdown— at least so they don't appear as a jumbled mess.
 
 Obviously, there are lots of ways to go about this problem, with lots of different and potentially conflicting (or complementary) heuristics and strategies one could try. First of all, what's the most robust and reliable way to even detect a potential table? We certainly want to avoid false positives, because the last thing we want to do is mess up existing content which is not a table and which is already displayed correctly.
 
-And once we think we've found a table, how should we go about diagnosing what is wrong with it? And once we think we know what's wrong with it, what's the best way to fix each tabular ailment? Once we've made a 'fix,' we really need to check it again to make sure that our fix didn't introduce yet another problem that needs to be fixed, and check if there are other separate remaining problems with the table that require attention.
+And once we think we've found a table, how should we go about diagnosing what's wrong with it? And once we think we know what's wrong with it, what's the best way to fix each tabular ailment? Once we've made a 'fix,' we really need to check it again to make sure that our fix didn't introduce yet another problem that needs to be fixed, and check if there are other separate remaining problems with the table that require attention.
 
 ## How to Do It
 
