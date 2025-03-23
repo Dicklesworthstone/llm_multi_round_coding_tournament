@@ -211,7 +211,7 @@ Claude 3.7 Sonnet with thinking:
 
 You can see the full prompt with all the pieces filled in [here](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/markdown_table_prompt_response_comparison__round_1.md) in markdown form.
 
-Now I would start a new conversation with each model, and paste in the above markdown file. I basically re-used the same prompt as before, but this time I only included the code from each model's response.
+Now I would start a new conversation with each model, and paste in the above markdown file.
 
 This yielded the following responses as the output of "round 1" of the tournament (you can think of the original responses from each model without them seeing each other's responses as "round 0").
 
