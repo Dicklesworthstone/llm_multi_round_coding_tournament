@@ -323,8 +323,6 @@ The tables below summarizes the full results of the tournament, giving the promp
 
 ## Analysis of the Actual Algorithms
 
-### Markdown Table Fixing Solutions Comparison
-
 | Round | Claude 3.7 Sonnet | Grok3 | o1-pro | o3-mini-high |
 |-------|-------------------|-------|--------|--------------|
 | **Round 1** | **Sophisticated recursive approach** <br>• Complex table detection with regex<br>• Multi-phase fixing strategy<br>• Handles complex multi-line content within cells<br>• Special handling for tables with repeated separators<br>• Comprehensive error diagnosis<br>• Validates final output<br><br>**Scores:**<br>Correctness: 85<br>Completeness: 88<br>Sophistication: 90 | **Block-based processing approach**<br>• Simple block identification<br>• Focuses on standardizing tables<br>• Uses whitespace-aware cell splitting<br>• Always rebuilds tables with standard format<br>• Less concern for preserving original styling<br><br>**Scores:**<br>Correctness: 75<br>Completeness: 70<br>Sophistication: 65 | **Preservation-focused approach**<br>• Carefully preserves original table styling<br>• Detects and maintains leading/trailing pipe style<br>• Efficient alignment line detection<br>• Minimally invasive fixing strategy<br>• Handles column overflow by merging<br><br>**Scores:**<br>Correctness: 80<br>Completeness: 75<br>Sophistication: 82 | **Compact block merging approach**<br>• Efficient code with fewer lines<br>• Smart merging of continuation lines<br>• Handles divider rows throughout the table<br>• Good handling of basic cases<br>• Limited handling of complex edge cases<br><br>**Scores:**<br>Correctness: 70<br>Completeness: 65<br>Sophistication: 72 |
