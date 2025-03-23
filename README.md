@@ -52,14 +52,15 @@ And once we think we've found a table, how should we go about diagnosing what is
 
 ## How to Do It
 
-OK, so step one is to craft our initial prompt, which we will include in all subsequent messages to the models. I settled on this formulation, but it might even be better with more examples and detailed analysis in the prompt of what makes each table invalid in order to save some "cognitive overhead" for the models so they can focus their attention more on actual problem solving. Here is what I came up with:
+OK, so step one is to craft our initial prompt, which we will include in all subsequent messages to the models. I settled on this formulation, but it might even be better with more examples and detailed analysis in the prompt of what makes each table invalid in order to save some "cognitive overhead" for the models so they can focus their attention more on actual problem solving. Here is what I came up with (note that I surrounded each of the messed up tables with code blocks (triple backticks), but suppressed them here so that GitHub would render the prompt correctly):
+
+---
 
 ```markdown
 I want you to make me a super sophisticated yet performant python function called "fix_invalid_markdown_tables" that takes markdown text as input and looks for tables that are invalid, then diagnoses what is wrong with them, and fixes them in a minimally invasive way. The function should make no change at all to any tables that ARE valid, and it should skip over any non-table content completely. 
 
 Here are examples of invalid tables it should be able to fix:
 
-```
 
 | ●| we have a limited customer base and limited sales and relationships with
 international customers;  
@@ -101,10 +102,6 @@ requirements; and
 ---|---|---  
   
 
-```
-
-```
-
 **Title of each class**|  | **Trading****  
 ****Symbol**|  | **Name of each exchange on which********registered**  
 ---|---|---|---|---  
@@ -113,9 +110,6 @@ Class A ordinary share| ​| CAN| ​| NASDAQ Global Market.
 Class A ordinary shares, par value US$0.00000005  
 per share*| ​| ​| ​| NASDAQ Global Market.  
 
-```
-
-```
 
 |  | July 31,|  |  | October 31,|   
 ---|---|---|---|---|---|---  
@@ -159,10 +153,10 @@ Accumulated deficit|  |  | (9,127,295| )|  |  | (3,902,456| )
 Total stockholders’ equity|  |  | 10,296,528|  |  |  | 2,723,124|   
 |  |  |  |  |  |  |  |   
 Total liabilities and stockholders’ equity|  | $| 11,170,601|  |  | $| 9,488,761|   
-  
-```
 
 ```
+
+---
 
 Now, step one is to simply paste that into each of the 4 models and gather their responses. You can see each of the complete original responses here as markdown files:
 
@@ -174,7 +168,7 @@ Now, step one is to simply paste that into each of the 4 models and gather their
 Then, I would take the responses from each model and paste them into a single markdown file, like this (I decided for round 1 responses to use the complete responses from each model, so it's not just the code, but the reasoning and analysis as well; in subsequent rounds I would only include the code):
 
 ```markdown
-I have the following problem which I posed to 4 different LLMs. I want you to carefully read the problem and then each solution. Choose the best ideas and elements from ALL solutions to the extent they are complementary rather than conflicting/inconsistent, and then weave together a true hybrid "best of all worlds" implementation which you are highly confident will not only work, but will outperform any of the individual solutions individually:
+I have the following problem which I posed to 4 different LLMs. I want you to carefully read the problem and then each solution. Choose the best ideas and elements from ALL solutions to the extent they are complementary rather than conflicting/inconsistent, and then weave together a true hybrid "best of all worlds" implementation which you are highly confident will not only work, but will outperform any of the individual solutions individually (as before, the actual prompt had triple backticks around each of the answers from the models, but I have suppressed them here for readability):
 
 Original prompt:
 
@@ -184,28 +178,23 @@ Responses from different LLMs:
 
 o1-pro:
 
-```
 <insert o1-pro response here>
-```
 
 o3-mini-high:
-```
+
 <insert o3-mini-high response here>
-```
 
 Grok3 with thinking:
-```
+
 <insert Grok3 response here>
-```
 
 Claude 3.7 Sonnet with thinking:
-```
+
 <insert Claude 3.7 Sonnet response here>
-```
 
 ```
 
-You can see the full prompt with all the pieces filled in [here](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/markdown_table_prompt_response_comparison__round_1.md) in markdown form. 
+You can see the full prompt with all the pieces filled in [here](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/markdown_table_prompt_response_comparison__round_1.md) in markdown form.
 
 Now I would start a new conversation with each model, and paste in the above markdown file. I basically re-used the same prompt as before, but this time I only included the code from each model's response. This yielded the following responses as the output of "round 1" of the tournament (you can think of the original responses from each model without them seeing each other's responses as "round 0").
 
@@ -226,18 +215,21 @@ The LLM responses from round 2 were:
 Round 3, 4, and 5 were the same process, and the LLM responses were:
 
 Round 3:
+
 - [Claude 3.7 Sonnet](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_3_responses/tournament_response__round_3__claude-37-sonnet.md)
 - [Grok3](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_3_responses/tournament_response__round_3__grok3.md)
 - [o1-pro](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_3_responses/tournament_response__round_3__o1-pro.md)
 - [o3-mini-high](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_3_responses/tournament_response__round_3__o3-mini-high.md)
 
 Round 4:
+
 - [Claude 3.7 Sonnet](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_4_responses/tournament_response__round_4__claude-37-sonnet.md)
 - [Grok3](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_4_responses/tournament_response__round_4__grok3.md)
 - [o1-pro](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_4_responses/tournament_response__round_4__o1-pro.md)
 - [o3-mini-high](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_4_responses/tournament_response__round_4__o3-mini-high.md)
 
 Round 5:
+
 - [Claude 3.7 Sonnet](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_5_responses/tournament_response__round_5__claude-37-sonnet.md)
 - [Grok3](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_5_responses/tournament_response__round_5__grok3.md)
 - [o1-pro](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_5_responses/tournament_response__round_5__o1-pro.md)
@@ -247,11 +239,11 @@ At this point, the results seemed to be fairly stable, with a fair amount of "cr
 
 Of all the models, I think Claude 3.7 Sonnet tried the hardest to continue to integrate new ideas and approaches, while Grok3 and o1-pro seemed to be more focused on refining their own ideas and approaches. I think this is a good example of how different models can have different strengths and weaknesses, and how they can complement each other in a multi-round tournament style approach.
 
-Finally, it was time to test the solutions. I asked Claude 3.7 Sonnet to turn each of the solutions from the 5th round into separate classes, and then apply each class to a 10-K filing from SEC's EDGAR system that had been converted to markdown using the `html2text` library. 
+Finally, it was time to test the solutions. I asked Claude 3.7 Sonnet to turn each of the solutions from the 5th round into separate classes, and then apply each class to a 10-K filing from SEC's EDGAR system that had been converted to markdown using the `html2text` library.
 
 The sample file I used for testing was [this one](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/sample_10k_reformatted.md), based on [this](https://www.sec.gov/Archives/edgar/data/65984/000006598421000096/etr-20201231.htm) original HTML file from the SEC's EDGAR system (Entergy's 10-K from 2020).
 
-Once I verified that this was working, I started a new conversation with Claude 3.7 Sonnet for each round of the tournament, and asked it to create 4 new classes for each of the 4 models and add them to the main testing function. 
+Once I verified that this was working, I started a new conversation with Claude 3.7 Sonnet for each round of the tournament, and asked it to create 4 new classes for each of the 4 models and add them to the main testing function.
 
 The final code file, [`fix_markdown_tables_tournament.py`](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/fix_markdown_tables_tournament.py), weighed in at ~3,500 lines of code and included 5*4 = 20 different classes, one for each round of the tournament and model. This generated 20 "fixed" versions of the same input 10-K filing markdown file. For example, here is the "fixed" version of the 10-K filing using the solution from Claude 3.7 Sonnet from the 5th round of the tournament:
 
@@ -263,7 +255,7 @@ The tables below summarizes the full results of the tournament, giving the promp
 
 ## Round 0 (Initial Solutions)
 
-| Model | Response | Size (KB) | Lines | 
+| Model | Response | Size (KB) | Lines |
 |-------|----------|-----------|-------|
 | Claude 3.7 Sonnet | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_0_responses/tournament_response__round_0__claude-37-sonnet.md) | 12.45 | 329 |
 | Grok3 | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_0_responses/tournament_response__round_0__grok3.md) | 8.13 | 147 |
@@ -327,4 +319,23 @@ The tables below summarizes the full results of the tournament, giving the promp
 
 I think this worked out really well. The final algorithm from Claude 3.7 Sonnet was able to do a pretty good job of fixing the tables, and I think it was able to do so in a way that was pretty close to the original intent of the tables. As smart and capable as these models are, it would be a lot to ask them to be able to make such an elaborate and sophisticated system all in a single shot. The chance to see multiple solutions from different "brains" and then collaboratively figure out how to best blend the ideas together really allowed the models to shine and show off their strengths. Besides being useful and generating better results than you could get from any of the models on their own, it's also fascinating from a purely theoretical perspective to see how the code evolves over time; in some cases, it's not a monotonic increase in code quality or performance, and there appeared to be some "model collapse" moments where the solution code would get markedly shorter and less sophisticated for a round or two, before recovering. Notably, Claude 3.7 Sonnet seemed to get longer and better with each round.
 
-The main drawback of this approach is how annoying it is to manually manage the entire process. That's why I decided to automate the entire thing using Andrew Ng's nice [`aisuite`](https://github.com/andrewyng/aisuite) package for Python, which abstracts away all the idiosyncrasies of the different models and their APIs, and allows you to easily run the same prompt on multiple models. 
+The main drawback of this approach is how annoying it is to manually manage the entire process. That's why I decided to automate the entire thing using Andrew Ng's nice [`aisuite`](https://github.com/andrewyng/aisuite) package for Python, which abstracts away all the idiosyncrasies of the different models and their APIs, and allows you to easily run the same prompt on multiple models. Note that grok3 does not yet have an api, so I substituted that model with Google's `gemini-2.0-flash-thinking-exp-01-21` model instead.
+
+Naturally, I [used](https://claude.ai/share/e0c0a9a8-223e-4588-93b5-cb4486a73f77) Claude 3.7 Sonnet to generate the entire code for the tournament automation, using the following prompt:
+
+```markdown
+First, carefully read the article. 
+
+Then, try to actually write the code mentioned at the end that fully automates the entire process for any given prompt (not just the prompt shown in the article about fixing a markdown file). The code should generate all the same folders and files with similar names based on patterns specified in the master python file. Attached is some documentation on aisuite showing how to use it.
+
+Note that grok3 does not yet have an api, so for that model, substitute it with the model gemini-2.0-flash-thinking-exp-01-21
+
+```
+
+And I attached this README file and the a couple of the `aisuite` files (the main readme file, the sample .env file, and an example iPython notebook) to the prompt.
+
+I did need to follow up with this comment, mercilessly mocking it for its initial lackluster code:
+
+> come on, that's awful and WAY too simple. Try again and do it PROPERLY AND THOROUGHLY!!! DO NOT DISAPPOINT ME AGAIN WITH A LAME COP OUT ATTEMPT LIKE THIS!!!
+
+But then it produced [`llm_tournament.py`]() in a single shot (well, it did have a single character escaping bug that it fixed) that did everything I needed.
