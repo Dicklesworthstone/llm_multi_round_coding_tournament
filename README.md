@@ -229,40 +229,25 @@ The LLM responses from round 2 were:
 - [o1-pro](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_2_responses/tournament_response__round_2__o1-pro.md)
 - [o3-mini-high](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_2_responses/tournament_response__round_2__o3-mini-high.md)
 
-Round 3, 4, and 5 were the same process, and the LLM responses were:
+Rounds 3, 4, and 5 were the exact same process. You can see the full results from each model and round in the comprehensive table in the next section.
 
-Round 3:
+At this point, after 5 rounds, the results seemed to be fairly stable, with a fair amount of "cross pollination" of ideas and approaches, but not a lot of new ideas or approaches being introduced.
 
-- [Claude 3.7 Sonnet](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_3_responses/tournament_response__round_3__claude-37-sonnet.md)
-- [Grok3](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_3_responses/tournament_response__round_3__grok3.md)
-- [o1-pro](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_3_responses/tournament_response__round_3__o1-pro.md)
-- [o3-mini-high](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_3_responses/tournament_response__round_3__o3-mini-high.md)
+I decided to stop at this point, but I think it would be interesting to try this with a different problem and see if the results are similar or different, and how many rounds it would take to reach a stable solution.
 
-Round 4:
+Of all the models, I think Claude 3.7 Sonnet tried the hardest to continue to integrate new ideas and approaches, while Grok3 and o1-pro seemed to be more focused on refining their own ideas and approaches.
 
-- [Claude 3.7 Sonnet](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_4_responses/tournament_response__round_4__claude-37-sonnet.md)
-- [Grok3](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_4_responses/tournament_response__round_4__grok3.md)
-- [o1-pro](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_4_responses/tournament_response__round_4__o1-pro.md)
-- [o3-mini-high](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_4_responses/tournament_response__round_4__o3-mini-high.md)
-
-Round 5:
-
-- [Claude 3.7 Sonnet](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_5_responses/tournament_response__round_5__claude-37-sonnet.md)
-- [Grok3](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_5_responses/tournament_response__round_5__grok3.md)
-- [o1-pro](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_5_responses/tournament_response__round_5__o1-pro.md)
-- [o3-mini-high](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_5_responses/tournament_response__round_5__o3-mini-high.md)
-
-At this point, the results seemed to be fairly stable, with a fair amount of "cross pollination" of ideas and approaches, but not a lot of new ideas or approaches being introduced. I decided to stop at this point, but I think it would be interesting to try this with a different problem and see if the results are similar or different, and how many rounds it would take to reach a stable solution.
-
-Of all the models, I think Claude 3.7 Sonnet tried the hardest to continue to integrate new ideas and approaches, while Grok3 and o1-pro seemed to be more focused on refining their own ideas and approaches. I think this is a good example of how different models can have different strengths and weaknesses, and how they can complement each other in a multi-round tournament style approach.
+I think this is a good example of how different models can have different strengths and weaknesses, and how they can complement each other in a multi-round tournament style approach.
 
 Finally, it was time to test the solutions. I asked Claude 3.7 Sonnet to turn each of the solutions from the 5th round into separate classes, and then apply each class to a 10-K filing from SEC's EDGAR system that had been converted to markdown using the `html2text` library.
 
-The sample file I used for testing was [this one](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/sample_10k_reformatted.md), based on [this](https://www.sec.gov/Archives/edgar/data/65984/000006598421000096/etr-20201231.htm) original HTML file from the SEC's EDGAR system (Entergy's 10-K from 2020).
+The sample file I used for testing was [this one](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/sample_10k_reformatted.md), based on [this](https://www.sec.gov/Archives/edgar/data/65984/000006598421000096/etr-20201231.htm) original HTML file from the SEC's EDGAR filing database (it's from a company called Entergy's 10-K report from 2020 in case you're interested).
 
 Once I verified that this was working, I started a new conversation with Claude 3.7 Sonnet for each round of the tournament, and asked it to create 4 new classes for each of the 4 models and add them to the main testing function.
 
-The final code file, [`fix_markdown_tables_tournament.py`](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/fix_markdown_tables_tournament.py), weighed in at ~3,500 lines of code and included 5*4 = 20 different classes, one for each round of the tournament and model. This generated 20 "fixed" versions of the same input 10-K filing markdown file. For example, here is the "fixed" version of the 10-K filing using the solution from Claude 3.7 Sonnet from the 5th round of the tournament:
+The final code file, [`fix_markdown_tables_tournament.py`](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/fix_markdown_tables_tournament.py), weighed in at ~3,500 lines of code and includes 5*4 = 20 different classes, one for each round of the tournament and model. This generated 20 "fixed" versions of the same input 10-K filing markdown file.
+
+For example, here is the "fixed" version of the 10-K filing using the solution from Claude 3.7 Sonnet from the 5th round of the tournament:
 
 [`sample_10k_reformatted__fixed_tables__claude37_round_5.md`](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/output_results_for_each_round_and_model/sample_10k_reformatted__fixed_tables__claude37_round_5.md)
 
@@ -524,9 +509,9 @@ I did need to follow up with this comment, mercilessly mocking it for its initia
 
 But then it produced [`llm_tournament.py`](https://github.com/Dicklesworthstone/llm-tournament) in a single shot (well, it did have a single character escaping bug that it fixed) that did everything I needed. OK, OK, I did need to fix a few more bugs (working with the Google API was too much brain damage so I had to switch to Mistral instead, and I had it skip the request if there was already a valid response saved in the folder; I also made the code for finding a code block more robust), but it was a pretty impressive performance overall.
 
-PS: I ended up having to change the way I extracted the code from the responses to create classes that could be used in an automated way in the testing process. I started going down the path of using regular expressions to extract the code and to deal with all the weird edge cases that the models would throw at me, but things kept getting longer and longer and more and more complicated, and I realized that I was doing things the "old" way. And there was a much smarter way staring me right in the face. You might be thinking "But couldn't you could use the `ast` module to parse the code and then extract the parts you needs?" 
+PS: I ended up having to change the way I extracted the code from the responses to create classes that could be used in an automated way in the testing process. I started going down the path of using regular expressions to extract the code and to deal with all the weird edge cases that the models would throw at me, but things kept getting longer and longer and more and more complicated, and I realized that I was doing things the "old" way. And there was a much smarter way staring me right in the face. You might be thinking "But couldn't you could use the `ast` module to parse the code and then extract the parts you needs?"
 
-That would still have all sorts of weird edge cases, and what's much worse, it would only work for Python code! No, I realized that using brittle old ways was not the way. Instead, I should just rely on Claude 3.7 to do exactly what was needed. Once I swapped out hundreds of lines of python methods for a handful of lines of mostly English language prompting, everything suddenly started working perfectly.
+That would still have all sorts of weird edge cases, and what's worse, it would only work for Python code. No, I realized that using brittle old ways was not the way to go. Not in the year 2025 when we are living in the future! Instead, I realized that I should just rely on my good friend Claude 3.7 to do exactly what I needed. Once I swapped out hundreds of lines of python methods for a handful of lines of mostly English language prompting, everything suddenly started working perfectly and I was off to the races!
 
 You can see all the details of the fully automated tournament process in the [llm_tournament.py](https://github.com/Dicklesworthstone/llm-tournament/blob/main/llm_tournament.py) code file, which is amazingly just 1,646 lines of code despite doing all the work of running the tournament and extracting the code from the responses. To put that into perspective, the final combined code from all the models and rounds for the markdown table fixing was 3,492 lines (see [here](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/fix_markdown_tables_tournament.py)), and for the messy CSV challenge, it was 7,952 lines! See [here](https://github.com/Dicklesworthstone/llm-tournament/blob/main/tournament_results/test_all_solutions.py) for that code file. The coolest part of that last file is that it was 100% generated automatically. Not just the various code blocks, but the entire file structure and the code that runs the tests and compares the results. It's all generated by the `llm_tournament.py` file. Pretty cool, huh?
 
