@@ -209,7 +209,9 @@ Claude 3.7 Sonnet with thinking:
 
 You can see the full prompt with all the pieces filled in [here](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/markdown_table_prompt_response_comparison__round_1.md) in markdown form.
 
-Now I would start a new conversation with each model, and paste in the above markdown file. I basically re-used the same prompt as before, but this time I only included the code from each model's response. This yielded the following responses as the output of "round 1" of the tournament (you can think of the original responses from each model without them seeing each other's responses as "round 0").
+Now I would start a new conversation with each model, and paste in the above markdown file. I basically re-used the same prompt as before, but this time I only included the code from each model's response.
+
+This yielded the following responses as the output of "round 1" of the tournament (you can think of the original responses from each model without them seeing each other's responses as "round 0").
 
 - [Claude 3.7 Sonnet](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_1_responses/tournament_response__round_1__claude-37-sonnet.md)
 - [Grok3](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_1_responses/tournament_response__round_1__grok3.md)
@@ -262,11 +264,11 @@ The final code file, [`fix_markdown_tables_tournament.py`](https://github.com/Di
 
 [`sample_10k_reformatted__fixed_tables__claude37_round_5.md`](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/output_results_for_each_round_and_model/sample_10k_reformatted__fixed_tables__claude37_round_5.md)
 
-# Results of the LLM Multi-Round Coding Tournament
+## Results of the LLM Multi-Round Coding Tournament
 
 The tables below summarizes the full results of the tournament, giving the prompts used for each round, the complete responses from each model, the total size in both lines of code and size in kilobytes of the code, and the resulting "fixed" test file using that particular solution from the model and round:
 
-## Round 0 (Initial Solutions)
+### Round 0 (Initial Solutions)
 
 | Model | Response | Size (KB) | Lines |
 |-------|----------|-----------|-------|
@@ -275,7 +277,7 @@ The tables below summarizes the full results of the tournament, giving the promp
 | o1-pro | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_0_responses/tournament_response__round_0__o1-pro.md) | 7.18 | 145 |
 | o3-mini-high | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_0_responses/tournament_response__round_0__o3-mini-high.md) | 3.00 | 78 |
 
-## Round 1
+### Round 1
 
 **Prompt File**: [markdown_table_prompt_response_comparison__round_1.md](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/markdown_table_prompt_response_comparison__round_1.md) (37.98KB, 847 lines)
 
@@ -286,7 +288,7 @@ The tables below summarizes the full results of the tournament, giving the promp
 | o1-pro | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_1_responses/tournament_response__round_1__o1-pro.md) | 7.76 | 180 | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/output_results_for_each_round_and_model/sample_10k_reformatted__fixed_tables__o1_pro_round_1.md) | 2,450.03 | 57,124 |
 | o3-mini-high | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_1_responses/tournament_response__round_1__o3-mini-high.md) | 3.66 | 80 | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/output_results_for_each_round_and_model/sample_10k_reformatted__fixed_tables__o3_mini_high_round_1.md) | 2,625.49 | 55,517 |
 
-## Round 2
+### Round 2
 
 **Prompt File**: [markdown_table_prompt_response_comparison__round_2.md](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/markdown_table_prompt_response_comparison__round_2.md) (26.80KB, 800 lines)
 
@@ -297,7 +299,7 @@ The tables below summarizes the full results of the tournament, giving the promp
 | o1-pro | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_2_responses/tournament_response__round_2__o1-pro.md) | 5.94 | 160 | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/output_results_for_each_round_and_model/sample_10k_reformatted__fixed_tables__o1_pro_round_2.md) | 2,535.05 | 56,461 |
 | o3-mini-high | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_2_responses/tournament_response__round_2__o3-mini-high.md) | 5.81 | 143 | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/output_results_for_each_round_and_model/sample_10k_reformatted__fixed_tables__o3_mini_high_round_2.md) | 2,552.42 | 56,332 |
 
-## Round 3
+### Round 3
 
 **Prompt File**: [markdown_table_prompt_response_comparison__round_3.md](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/markdown_table_prompt_response_comparison__round_3.md) (30.25KB, 928 lines)
 
@@ -308,7 +310,7 @@ The tables below summarizes the full results of the tournament, giving the promp
 | o1-pro | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_3_responses/tournament_response__round_3__o1-pro.md) | 5.96 | 171 | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/output_results_for_each_round_and_model/sample_10k_reformatted__fixed_tables__o1_pro_round_3.md) | 2539.76 | 56,332 |
 | o3-mini-high | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_3_responses/tournament_response__round_3__o3-mini-high.md) | 4.50 | 104 | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/output_results_for_each_round_and_model/sample_10k_reformatted__fixed_tables__o3_mini_high_round_3.md) | 2,542.09 | 56,461 |
 
-## Round 4
+### Round 4
 
 **Prompt File**: [markdown_table_prompt_response_comparison__round_4.md](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/markdown_table_prompt_response_comparison__round_4.md) (31.60KB, 947 lines)
 
@@ -319,7 +321,7 @@ The tables below summarizes the full results of the tournament, giving the promp
 | o1-pro | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_4_responses/tournament_response__round_4__o1-pro.md) | 3.89 | 110 | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/output_results_for_each_round_and_model/sample_10k_reformatted__fixed_tables__o1_pro_round_4.md) | 2,558.94 | 56,468 |
 | o3-mini-high | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_4_responses/tournament_response__round_4__o3-mini-high.md) | 6.18 | 165 | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/output_results_for_each_round_and_model/sample_10k_reformatted__fixed_tables__o3_mini_high_round_4.md) | 2,544.24 | 56,218 |
 
-## Round 5 (Final Solutions)
+### Round 5 (Final Solutions)
 
 | Model | Response | Size (KB) | Lines | Output File | Output Size (KB) | Output Lines |
 |-------|----------|-----------|-------|-------------|------------------|--------------|
@@ -418,6 +420,84 @@ Looking at the evolution of markdown table fixing solutions across rounds and mo
 
 Claude 3.7 Sonnet showed the most consistent improvement across rounds and produced the highest-rated final solution, but each model made valuable contributions to the collective knowledge pool. This tournament approach successfully leveraged the strengths of multiple AI models to create a solution better than any could produce individually.
 
+## Why LLM Multi-Round Tournaments Work So Well
+
+### The Power of Collaborative Intelligence
+
+The remarkable success of the multi-round tournament approach demonstrates a powerful form of collaborative artificial intelligence that goes beyond what any single model can achieve. This approach works exceptionally well for several key reasons:
+
+#### Cross-Pollination of Ideas
+
+When multiple LLMs are exposed to each other's solutions, a powerful cross-pollination of ideas occurs. Each model has its own "blind spots" and preferred solution paths based on its training data, architecture, and optimization approach. By seeing alternative solutions, models can recognize valuable patterns they might have overlooked. For example, Claude quickly adopted o1-pro's elegant style preservation approach, while o3-mini-high incorporated pattern detection strategies it hadn't initially prioritized.
+
+This cross-pollination effect mirrors how human innovation often works - breakthrough ideas frequently come from combining concepts across different domains or perspectives. The tournament creates a structured environment where models can "learn" from each other without needing to be retrained.
+
+#### Breaking Out of Local Maxima
+
+LLMs, like any optimization system, can get stuck in local maxima - solutions that seem optimal when viewed from a limited perspective. When presented with radically different approaches to the same problem, models are effectively forced to reconsider their assumptions and explore new solution spaces.
+
+In the markdown table fixing tournament, we saw models break out of their initial approaches when exposed to alternatives. For instance, models that initially prioritized comprehensive validation began incorporating minimally invasive fixing strategies after seeing their effectiveness in other implementations.
+
+#### Scaling Beyond Human Feedback
+
+Traditional LLM improvement relies heavily on human feedback, which creates bottlenecks in development:
+
+1. **Time efficiency**: Human feedback is slow and limited by human attention spans
+2. **Cost effectiveness**: Human reviewer time is expensive
+3. **Scale limitations**: It's difficult to scale human review to cover vast solution spaces
+
+The tournament approach replaces much of this human-LLM interaction with LLM-to-LLM feedback, creating a more efficient improvement cycle. While human judgment is still valuable for assessing final results, the intermediate improvement steps happen autonomously.
+
+#### Emergent Sophistication
+
+Perhaps most fascinating is how the collective intelligence of multiple LLMs produces solutions more sophisticated than any individual model might have created. By round 5, the implementations showed remarkable convergence on core architectural patterns while maintaining their unique strengths. This emergent sophistication demonstrates how structured LLM collaboration can produce results greater than the sum of their parts.
+
+This tournament approach represents a significant advance in how we might develop sophisticated software solutions in the future - not just by asking a single AI for the "best" answer, but by orchestrating a collaborative development process across multiple AI systems with different strengths and perspectives.
+
+## More Insights
+
+### Evolutionary Algorithms in Action
+
+What's particularly fascinating about this tournament approach is how it mirrors principles from evolutionary algorithms. Each round effectively represents a generation, with the best ideas being selected and recombined to form increasingly fit solutions. Unlike traditional genetic algorithms where variation comes from random mutation, here the "genetic diversity" stems from the different architectural biases and reasoning approaches of each model.
+
+The progression from rounds 1 to 5 shows a clear evolutionary trajectory: early solutions exhibit high diversity but uneven quality, while later solutions converge on optimal patterns while maintaining specialized adaptations. This emergent evolution happens without explicit fitness functions or selection pressures beyond the implicit goal of creating the best table-fixing algorithm.
+
+### Creating Cognitive Diversity
+
+One of the most profound insights from this project is how it leverages cognitive diversity across different LLM architectures. Each model approaches problems with slightly different "cognitive styles":
+
+- Claude tends toward comprehensive, thorough solutions with careful edge case handling
+- Grok3 often finds elegant middle-ground approaches
+- o1-pro excels at minimal-change strategies
+- o3-mini-high prioritizes efficiency and conciseness
+
+This diversity creates a more robust exploration of the solution space than any single model could achieve. It's similar to how diverse human teams often outperform homogeneous ones on complex problems - different cognitive approaches uncover different aspects of the solution space.
+
+### Reshaping Software Development Practices
+
+This approach suggests a potential transformation in how complex software is developed. Rather than the traditional cycle of requirements gathering, design, implementation, and testing, we might see a new paradigm:
+
+1. Problem formulation and constraints definition
+2. Initial multi-model solution generation
+3. Cross-pollination and optimization rounds
+4. Human evaluation and selection of preferred approaches
+5. Further refinement of selected solutions
+
+This could dramatically accelerate development cycles while producing more robust solutions, especially for complex algorithmic challenges where the "right approach" isn't immediately obvious.
+
+### Beyond Code: Applications to Knowledge Domains
+
+While this tournament focused on code generation, the same approach could revolutionize how LLMs tackle problems in specialized knowledge domains. Imagine applying this to:
+
+- Medical diagnosis protocols
+- Legal contract drafting
+- Financial risk assessment models
+- Scientific hypothesis generation
+
+In each case, the tournament approach could uncover nuances and edge cases that single-model approaches might miss, while accelerating the development of sophisticated domain-specific solutions.
+
+This tournament approach represents not just a clever trick for better code generation, but potentially a new paradigm for how artificial intelligence systems collaborate to solve complex problems - one that might eventually change how humans and AI systems work together across virtually all knowledge-intensive domains.
+
 ## Conclusions
 
 I think this worked out really well. The final algorithm from Claude 3.7 Sonnet was able to do a pretty good job of fixing the tables, and I think it was able to do so in a way that was pretty close to the original intent of the tables. As smart and capable as these models are, it would be a lot to ask them to be able to make such an elaborate and sophisticated system all in a single shot. The chance to see multiple solutions from different "brains" and then collaboratively figure out how to best blend the ideas together really allowed the models to shine and show off their strengths. Besides being useful and generating better results than you could get from any of the models on their own, it's also fascinating from a purely theoretical perspective to see how the code evolves over time; in some cases, it's not a monotonic increase in code quality or performance, and there appeared to be some "model collapse" moments where the solution code would get markedly shorter and less sophisticated for a round or two, before recovering. Notably, Claude 3.7 Sonnet seemed to get longer and better with each round.
@@ -432,7 +512,7 @@ Naturally, I [used](https://claude.ai/share/e0c0a9a8-223e-4588-93b5-cb4486a73f77
 >
 >Note that grok3 does not yet have an api, so for that model, substitute it with the model mistral-large-latest
 
-And I attached this README file and the a couple of the `aisuite` files (the main readme file, the sample .env file, and an example iPython notebook) to the prompt.
+And I attached this README.md file and the a couple of the `aisuite` files (the main readme file, the sample .env file, and an example iPython notebook) to the prompt.
 
 I did need to follow up with this comment, mercilessly mocking it for its initial lackluster code:
 
@@ -440,9 +520,278 @@ I did need to follow up with this comment, mercilessly mocking it for its initia
 
 But then it produced [`llm_tournament.py`](https://github.com/Dicklesworthstone/llm-tournament) in a single shot (well, it did have a single character escaping bug that it fixed) that did everything I needed. OK, OK, I did need to fix a few more bugs (working with the Google API was too much brain damage so I had to switch to Mistral instead, and I had it skip the request if there was already a valid response saved in the folder; I also made the code for finding a code block more robust), but it was a pretty impressive performance overall.
 
-But seriously, it works so well! You just put your coding prompt in the `challenge_prompt.md` file and run the script with:
+PS: I ended up having to change the way I extracted the code from the responses to create classes that could be used in an automated way in the testing process. I started going down the path of using regular expressions to extract the code and to deal with all the weird edge cases that the models would throw at me, but things kept getting longer and longer and more and more complicated, and I realized that I was doing things the "old" way. And there was a much smarter way staring me right in the face. You might be thinking "But couldn't you could use the `ast` module to parse the code and then extract the parts you needs?" 
+
+That would still have all sorts of weird edge cases, and what's much worse, it would only work for Python code! No, I realized that using brittle old ways was not the way. Instead, I should just rely on Claude 3.7 to do exactly what was needed. Once I swapped out hundreds of lines of python methods for a handful of lines of mostly English language prompting, everything suddenly started working perfectly.
+
+But seriously, it works so well! You just put your coding prompt in the `challenge_prompt.md` file and create a sample input file (this could be anything, it's totally generic) and then run the script like this ( note that this shows a run where I had already run it earlier, so it intelligently saves the responses and doesn't need to re-submit the requests to the LLM APIs; this saves a lot of time and money in case something goes wrong partway through the process):
 
 ```bash
-python llm_tournament.py --prompt challenge_prompt.md --test-file messy_csv_sample.csv
+❯ python llm_tournament.py --prompt challenge_prompt.md --test-file messy_csv_sample.csv
+
+
+   __    __              _____                                                  _
+  / /   / /   /\/\      /__   \___  _   _ _ __ _ __   __ _ _ __ ___   ___ _ __ | |_
+ / /   / /   /    \ _____ / /\/ _ \| | | | '__| '_ \ / _` | '_ ` _ \ / _ \ '_ \| __|
+/ /___/ /___/ /\/\ \_____/ / | (_) | |_| | |  | | | | (_| | | | | | |  __/ | | | |_
+\____/\____/\/    \/     \/   \___/ \__,_|_|  |_| |_|\__,_|_| |_| |_|\___|_| |_|\__|
+
+
+
+Starting LLM Tournament with 4 models for 5 rounds
+Output directory: tournament_results
+Models: o3_mini, gpt4o, claude37, mistral_large
+
+2025-03-23 07:51:23,190 - llm_tournament - INFO - Initialized LLM Tournament with 4 models for 5 rounds
+2025-03-23 07:51:23,191 - llm_tournament - INFO - Output directory: tournament_results
+2025-03-23 07:51:23,191 - llm_tournament - INFO - Starting tournament with round 0 (initial solutions)
+2025-03-23 07:51:23,191 - llm_tournament - INFO - Starting Round 0
+2025-03-23 07:51:23,191 - llm_tournament - INFO - All responses for round 0 already exist. Loading...
+2025-03-23 07:51:23,191 - llm_tournament - INFO - Loading previously extracted code for o3_mini Round 0 from file
+2025-03-23 07:51:23,193 - llm_tournament - INFO - Loaded existing response for o3_mini (round 0)
+2025-03-23 07:51:23,193 - llm_tournament - INFO - Loading previously extracted code for gpt4o Round 0 from file
+2025-03-23 07:51:23,194 - llm_tournament - INFO - Loaded existing response for gpt4o (round 0)
+2025-03-23 07:51:23,194 - llm_tournament - INFO - Loading previously extracted code for claude37 Round 0 from file
+2025-03-23 07:51:23,196 - llm_tournament - INFO - Loaded existing response for claude37 (round 0)
+2025-03-23 07:51:23,196 - llm_tournament - INFO - Loading previously extracted code for mistral_large Round 0 from file
+2025-03-23 07:51:23,197 - llm_tournament - INFO - Loaded existing response for mistral_large (round 0)
+2025-03-23 07:51:23,197 - llm_tournament - INFO - Starting Round 1
+2025-03-23 07:51:23,197 - llm_tournament - INFO - All responses for round 1 already exist. Loading...
+2025-03-23 07:51:23,197 - llm_tournament - INFO - Loading previously extracted code for o3_mini Round 1 from file
+2025-03-23 07:51:23,199 - llm_tournament - INFO - Loaded existing response for o3_mini (round 1)
+2025-03-23 07:51:23,200 - llm_tournament - INFO - Loading previously extracted code for gpt4o Round 1 from file
+2025-03-23 07:51:23,200 - llm_tournament - INFO - Loaded existing response for gpt4o (round 1)
+2025-03-23 07:51:23,201 - llm_tournament - INFO - Loading previously extracted code for claude37 Round 1 from file
+2025-03-23 07:51:23,204 - llm_tournament - INFO - Loaded existing response for claude37 (round 1)
+2025-03-23 07:51:23,204 - llm_tournament - INFO - Loading previously extracted code for mistral_large Round 1 from file
+2025-03-23 07:51:23,204 - llm_tournament - INFO - Loaded existing response for mistral_large (round 1)
+2025-03-23 07:51:23,205 - llm_tournament - INFO - Created comparison file for round 1: tournament_results/markdown_table_prompt_response_comparison__round_1.md
+2025-03-23 07:51:23,205 - llm_tournament - INFO - Completed round 1. Waiting before starting next round...
+2025-03-23 07:51:26,205 - llm_tournament - INFO - Starting Round 2
+2025-03-23 07:51:26,206 - llm_tournament - INFO - All responses for round 2 already exist. Loading...
+2025-03-23 07:51:26,206 - llm_tournament - INFO - Loading previously extracted code for o3_mini Round 2 from file
+2025-03-23 07:51:26,208 - llm_tournament - INFO - Loaded existing response for o3_mini (round 2)
+2025-03-23 07:51:26,208 - llm_tournament - INFO - Loading previously extracted code for gpt4o Round 2 from file
+2025-03-23 07:51:26,209 - llm_tournament - INFO - Loaded existing response for gpt4o (round 2)
+2025-03-23 07:51:26,209 - llm_tournament - INFO - Loading previously extracted code for claude37 Round 2 from file
+2025-03-23 07:51:26,212 - llm_tournament - INFO - Loaded existing response for claude37 (round 2)
+2025-03-23 07:51:26,212 - llm_tournament - INFO - Loading previously extracted code for mistral_large Round 2 from file
+2025-03-23 07:51:26,214 - llm_tournament - INFO - Loaded existing response for mistral_large (round 2)
+2025-03-23 07:51:26,215 - llm_tournament - INFO - Created comparison file for round 2: tournament_results/markdown_table_prompt_response_comparison__round_2.md
+2025-03-23 07:51:26,215 - llm_tournament - INFO - Completed round 2. Waiting before starting next round...
+2025-03-23 07:51:29,215 - llm_tournament - INFO - Starting Round 3
+2025-03-23 07:51:29,216 - llm_tournament - INFO - All responses for round 3 already exist. Loading...
+2025-03-23 07:51:29,216 - llm_tournament - INFO - Loading previously extracted code for o3_mini Round 3 from file
+2025-03-23 07:51:29,218 - llm_tournament - INFO - Loaded existing response for o3_mini (round 3)
+2025-03-23 07:51:29,219 - llm_tournament - INFO - Loading previously extracted code for gpt4o Round 3 from file
+2025-03-23 07:51:29,220 - llm_tournament - INFO - Loaded existing response for gpt4o (round 3)
+2025-03-23 07:51:29,220 - llm_tournament - INFO - Loading previously extracted code for claude37 Round 3 from file
+2025-03-23 07:51:29,223 - llm_tournament - INFO - Loaded existing response for claude37 (round 3)
+2025-03-23 07:51:29,223 - llm_tournament - INFO - Loading previously extracted code for mistral_large Round 3 from file
+2025-03-23 07:51:29,226 - llm_tournament - INFO - Loaded existing response for mistral_large (round 3)
+2025-03-23 07:51:29,226 - llm_tournament - INFO - Created comparison file for round 3: tournament_results/markdown_table_prompt_response_comparison__round_3.md
+2025-03-23 07:51:29,227 - llm_tournament - INFO - Completed round 3. Waiting before starting next round...
+2025-03-23 07:51:32,227 - llm_tournament - INFO - Starting Round 4
+2025-03-23 07:51:32,227 - llm_tournament - INFO - All responses for round 4 already exist. Loading...
+2025-03-23 07:51:32,227 - llm_tournament - INFO - Loading previously extracted code for o3_mini Round 4 from file
+2025-03-23 07:51:32,229 - llm_tournament - INFO - Loaded existing response for o3_mini (round 4)
+2025-03-23 07:51:32,230 - llm_tournament - INFO - Loading previously extracted code for gpt4o Round 4 from file
+2025-03-23 07:51:32,231 - llm_tournament - INFO - Loaded existing response for gpt4o (round 4)
+2025-03-23 07:51:32,231 - llm_tournament - INFO - Loading previously extracted code for claude37 Round 4 from file
+2025-03-23 07:51:32,234 - llm_tournament - INFO - Loaded existing response for claude37 (round 4)
+2025-03-23 07:51:32,234 - llm_tournament - INFO - Loading previously extracted code for mistral_large Round 4 from file
+2025-03-23 07:51:32,236 - llm_tournament - INFO - Loaded existing response for mistral_large (round 4)
+2025-03-23 07:51:32,237 - llm_tournament - INFO - Created comparison file for round 4: tournament_results/markdown_table_prompt_response_comparison__round_4.md
+2025-03-23 07:51:32,237 - llm_tournament - INFO - Completed round 4. Waiting before starting next round...
+2025-03-23 07:51:35,238 - llm_tournament - INFO - Starting Round 5
+2025-03-23 07:51:35,238 - llm_tournament - INFO - All responses for round 5 already exist. Loading...
+2025-03-23 07:51:35,240 - llm_tournament - INFO - Loading previously extracted code for o3_mini Round 5 from file
+2025-03-23 07:51:35,245 - llm_tournament - INFO - Loaded existing response for o3_mini (round 5)
+2025-03-23 07:51:35,246 - llm_tournament - INFO - Loading previously extracted code for gpt4o Round 5 from file
+2025-03-23 07:51:35,250 - llm_tournament - INFO - Loaded existing response for gpt4o (round 5)
+2025-03-23 07:51:35,250 - llm_tournament - INFO - Loading previously extracted code for claude37 Round 5 from file
+2025-03-23 07:51:35,253 - llm_tournament - INFO - Loaded existing response for claude37 (round 5)
+2025-03-23 07:51:35,253 - llm_tournament - INFO - Loading previously extracted code for mistral_large Round 5 from file
+2025-03-23 07:51:35,255 - llm_tournament - INFO - Loaded existing response for mistral_large (round 5)
+2025-03-23 07:51:35,255 - llm_tournament - INFO - Created comparison file for round 5: tournament_results/markdown_table_prompt_response_comparison__round_5.md
+2025-03-23 07:51:35,256 - llm_tournament - INFO - Tournament completed. Generating final artifacts...
+2025-03-23 07:51:35,257 - llm_tournament - INFO - Generated metrics report: tournament_results/metrics/tournament_report.md
+2025-03-23 07:51:35,260 - llm_tournament - INFO - Created test suite: tournament_results/test_all_solutions.py
+2025-03-23 07:51:35,260 - llm_tournament - INFO - Created results analyzer: tournament_results/analyze_results.py
+2025-03-23 07:51:35,260 - llm_tournament - INFO - Tournament completed successfully with 6 rounds
+2025-03-23 07:51:35,260 - llm_tournament - INFO - Running tests on messy_csv_sample.csv...
+Running: python /home/ubuntu/llm-tournament/tournament_results/test_all_solutions.py --input messy_csv_sample.csv --output-dir output_results_for_each_round_and_model
+/home/ubuntu/llm-tournament/tournament_results/test_all_solutions.py:4767: SyntaxWarning: invalid escape sequence '\s'
+  """
+/home/ubuntu/llm-tournament/tournament_results/test_all_solutions.py:6188: SyntaxWarning: invalid escape sequence '\s'
+  """
+/home/ubuntu/llm-tournament/tournament_results/test_all_solutions.py:6263: SyntaxWarning: invalid escape sequence '\s'
+  """
+/home/ubuntu/llm-tournament/tournament_results/test_all_solutions.py:6309: SyntaxWarning: invalid escape sequence '\s'
+  """
+Input file: messy_csv_sample.csv
+Input lines: 31
+Input chars: 2056
+
+Testing o3_miniRound0Solution...
+  Execution time: 0.01s
+  Output lines: 26
+  Output size: 1.92 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__o3-mini_round_0.md
+
+Testing gpt4oRound0Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 1.75 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__gpt4o_round_0.md
+
+Testing claude37Round0Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 2.0 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__claude37_round_0.md
+
+Testing mistral_largeRound0Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 2.73 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__mistral-large_round_0.md
+
+Testing o3_miniRound1Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 1.97 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__o3-mini_round_1.md
+
+Testing gpt4oRound1Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 0.42 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__gpt4o_round_1.md
+
+Testing claude37Round1Solution...
+  Execution time: 0.01s
+  Output lines: 26
+  Output size: 1.61 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__claude37_round_1.md
+
+Testing mistral_largeRound1Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 2.73 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__mistral-large_round_1.md
+
+Testing o3_miniRound2Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 1.98 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__o3-mini_round_2.md
+
+Testing gpt4oRound2Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 1.61 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__gpt4o_round_2.md
+
+Testing claude37Round2Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 1.97 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__claude37_round_2.md
+
+Testing mistral_largeRound2Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 1.67 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__mistral-large_round_2.md
+
+Testing o3_miniRound3Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 1.61 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__o3-mini_round_3.md
+
+Testing gpt4oRound3Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 1.61 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__gpt4o_round_3.md
+
+Testing claude37Round3Solution...
+  Execution time: 0.01s
+  Output lines: 26
+  Output size: 1.64 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__claude37_round_3.md
+
+Testing mistral_largeRound3Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 1.63 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__mistral-large_round_3.md
+
+Testing o3_miniRound4Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 1.61 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__o3-mini_round_4.md
+
+Testing gpt4oRound4Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 1.61 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__gpt4o_round_4.md
+
+Testing claude37Round4Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 1.61 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__claude37_round_4.md
+
+Testing mistral_largeRound4Solution...
+  Execution time: 0.01s
+  Output lines: 26
+  Output size: 1.61 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__mistral-large_round_4.md
+
+Testing o3_miniRound5Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 1.61 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__o3-mini_round_5.md
+
+Testing gpt4oRound5Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 1.61 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__gpt4o_round_5.md
+
+Testing claude37Round5Solution...
+  Execution time: 0.0s
+  Output lines: 26
+  Output size: 1.61 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__claude37_round_5.md
+
+Testing mistral_largeRound5Solution...
+  Execution time: 0.01s
+  Output lines: 26
+  Output size: 1.66 KB
+  Output saved to: output_results_for_each_round_and_model/sample_file_output__mistral-large_round_5.md
+
+Metrics saved to: metrics/test_metrics.json
+2025-03-23 07:51:35,511 - llm_tournament - INFO - Tests completed successfully
+2025-03-23 07:51:35,511 - llm_tournament - INFO - Analyzing tournament results...
+Report saved to: tournament_results/analysis/tournament_results_report.md
+Matplotlib not available. Skipping visualizations.
+2025-03-23 07:51:35,542 - llm_tournament - INFO - Analysis completed successfully
+
+Tournament completed successfully!
+Results are available in: tournament_results
 ```
 
+And then you can look at the results in the `tournament_results` folder. It's pretty cool! You can see all the results here using a totally different sample problem (this one is a messy CSV file that needs to be cleaned up so it can be imported easily):
+
+[`tournament_results`'](https://github.com/Dicklesworthstone/llm-tournament/tree/main/tournament_results)
+
+And the generated output files using the code for each model and round can be found here:
+
+[`output_results_for_each_round_and_model`](https://github.com/Dicklesworthstone/llm-tournament/tree/main/output_results_for_each_round_and_model)
