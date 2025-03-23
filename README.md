@@ -32,11 +32,11 @@ This got me thinking about how this idea could be taken to its natural conclusio
 
 I quickly realized that if I naively followed the same exact approach but with 4 models instead of 2, I would quickly run into a combinatorial explosion of having to show each model each other model's response, and so on with the follow up responses.
 
-Thus, I decided to instead put ALL the responses during each round in a single markdown file for submission. I also took some liberties with when I would create a new "conversation" with each model to clear out the context window fully and get them to start with a fresh state of mind.
+Thus, I decided to instead put ALL the responses during each round in a single markdown file for submission. I also took some liberties with exactly when I would create a new "conversation" with each model to clear out the context window fully and get them to start with a fresh state of mind.
 
 ## A Good Test Problem
 
-Now, in order to make any of this interesting and worthwhile, we need a worthy problem. That is, a simple problem with a pretty straightforward and an obvious correct answer wouldn't show off the power of this method, because all the models would hopefully quickly converge on the right answer.
+Now, in order to make any of this interesting and worthwhile, we need a worthy problem. A simple problem with a pretty straightforward and obvious correct answer wouldn't show off the power of this method, because all the models would hopefully quickly converge on the right answer.
 
 I decided that the best kind of problem would be one that is a bit messy and which didn't have a single right answer or even a "best approach," but which admitted many possible approaches. I finally settled on the problem of trying to "fix" an invalid markdown table.
 
