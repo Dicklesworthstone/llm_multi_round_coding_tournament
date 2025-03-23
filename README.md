@@ -165,10 +165,17 @@ Now, step one is to simply paste that into each of the 4 models and gather their
 - [o1-pro](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_0_responses/tournament_response__round_0__o1-pro.md)
 - [o3-mini-high](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_0_responses/tournament_response__round_0__o3-mini-high.md)
 
-Then, I would take the responses from each model and paste them into a single markdown file, like this (I decided for round 1 responses to use the complete responses from each model, so it's not just the code, but the reasoning and analysis as well; in subsequent rounds I would only include the code):
+Then, I would take the responses from each model and paste them into a single markdown file, like this (I decided for round 1 responses to use the complete responses from each model, so it's not just the code, but the reasoning and analysis as well; in subsequent rounds I would only include the code; as before, the actual prompt had triple backticks around each of the answers from the models, but I have suppressed them here for readability):
 
 ```markdown
-I have the following problem which I posed to 4 different LLMs. I want you to carefully read the problem and then each solution. Choose the best ideas and elements from ALL solutions to the extent they are complementary rather than conflicting/inconsistent, and then weave together a true hybrid "best of all worlds" implementation which you are highly confident will not only work, but will outperform any of the individual solutions individually (as before, the actual prompt had triple backticks around each of the answers from the models, but I have suppressed them here for readability):
+I have the following problem which I posed to 4 different LLMs.
+
+I want you to carefully read the problem and then each solution.
+
+Choose the best ideas and elements from ALL solutions to the extent they are complementary 
+rather than conflicting/inconsistent, and then weave together a true hybrid "best of all worlds" 
+implementation which you are highly confident will not only work, but will outperform any of 
+the individual solutions individually:
 
 Original prompt:
 
@@ -315,22 +322,109 @@ The tables below summarizes the full results of the tournament, giving the promp
 | o1-pro | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_5_responses/tournament_response__round_5__o1-pro.md) | 7.62 | 194 | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/output_results_for_each_round_and_model/sample_10k_reformatted__fixed_tables__o1_pro_round_5.md) | 2,595.85 | 56,994 |
 | o3-mini-high | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/round_5_responses/tournament_response__round_5__o3-mini-high.md) | 4.34 | 100 | [Link](https://github.com/Dicklesworthstone/llm_multi_round_coding_tournament/blob/main/output_results_for_each_round_and_model/sample_10k_reformatted__fixed_tables__o3_mini_high_round_5.md) | 2,554.81 | 56,385 |
 
+
+## Analysis of the Actual Algorithms
+
+### Markdown Table Fixing Solutions Comparison
+
+| Round | Claude 3.7 Sonnet | Grok3 | o1-pro | o3-mini-high |
+|-------|-------------------|-------|--------|--------------|
+| **Round 1** | **Sophisticated recursive approach** <br>• Complex table detection with regex<br>• Multi-phase fixing strategy<br>• Handles complex multi-line content within cells<br>• Special handling for tables with repeated separators<br>• Comprehensive error diagnosis<br>• Validates final output<br><br>**Scores:**<br>Correctness: 85<br>Completeness: 88<br>Sophistication: 90 | **Block-based processing approach**<br>• Simple block identification<br>• Focuses on standardizing tables<br>• Uses whitespace-aware cell splitting<br>• Always rebuilds tables with standard format<br>• Less concern for preserving original styling<br><br>**Scores:**<br>Correctness: 75<br>Completeness: 70<br>Sophistication: 65 | **Preservation-focused approach**<br>• Carefully preserves original table styling<br>• Detects and maintains leading/trailing pipe style<br>• Efficient alignment line detection<br>• Minimally invasive fixing strategy<br>• Handles column overflow by merging<br><br>**Scores:**<br>Correctness: 80<br>Completeness: 75<br>Sophistication: 82 | **Compact block merging approach**<br>• Efficient code with fewer lines<br>• Smart merging of continuation lines<br>• Handles divider rows throughout the table<br>• Good handling of basic cases<br>• Limited handling of complex edge cases<br><br>**Scores:**<br>Correctness: 70<br>Completeness: 65<br>Sophistication: 72 |
+| **Round 2** | **Streamlined architecture**<br>• Cleaner function organization<br>• Strong structural validation<br>• Improved handling of table styles<br>• Better normalization of rows<br>• Enhanced separator detection<br><br>**Improvement:** Better balance between complexity and readability; more consistent style preservation<br><br>**Scores:**<br>Correctness: 88<br>Completeness: 85<br>Sophistication: 87 | **Enhanced validation**<br>• Improved table identification<br>• Better style preservation<br>• More structured processing workflow<br>• Enhanced separator row handling<br>• More flexible pattern recognition<br><br>**Improvement:** Added style preservation from o1-pro's approach<br><br>**Scores:**<br>Correctness: 80<br>Completeness: 75<br>Sophistication: 75 | **Better edge case handling**<br>• Improved validation logic<br>• More consistent normalization<br>• Clearer separation of concerns<br>• Better handling of multi-line content<br><br>**Improvement:** Adopted table structural validation from Claude's approach<br><br>**Scores:**<br>Correctness: 82<br>Completeness: 78<br>Sophistication: 80 | **Expanded functionality**<br>• Better handling of table structure<br>• Improved row normalization<br>• More systematic validation<br>• Style preservation improvements<br><br>**Improvement:** Adopted style preservation from o1-pro's approach<br><br>**Scores:**<br>Correctness: 75<br>Completeness: 70<br>Sophistication: 73 |
+| **Round 3** | **Advanced pattern detection**<br>• Sophisticated table pattern analysis<br>• Better continuation line merging<br>• Enhanced style preservation<br>• More robust validation<br>• Adaptive fixing based on table structure<br><br>**Improvement:** Added table pattern analysis to handle tables with repeating separators more intelligently<br><br>**Scores:**<br>Correctness: 91<br>Completeness: 90<br>Sophistication: 92 | **Improved multi-line handling**<br>• Better continuation line merging<br>• Enhanced separator identification<br>• More flexible table processing<br>• Improved pattern recognition<br><br>**Improvement:** Adopted Claude's pattern detection approach<br><br>**Scores:**<br>Correctness: 85<br>Completeness: 80<br>Sophistication: 83 | **Better cell merging**<br>• Enhanced pattern detection<br>• More streamlined function design<br>• Better style preservation<br>• Improved edge case handling<br><br>**Improvement:** Adopted aspects of Claude's pattern analysis approach<br><br>**Scores:**<br>Correctness: 86<br>Completeness: 82<br>Sophistication: 85 | **Improved separator validation**<br>• Better continuation line handling<br>• Enhanced table style preservation<br>• More robust pattern detection<br>• Cleaner code organization<br><br>**Improvement:** Incorporated pattern detection similar to other implementations<br><br>**Scores:**<br>Correctness: 80<br>Completeness: 75<br>Sophistication: 78 |
+| **Round 4** | **Comprehensive block processing**<br>• Enhanced table pattern detection<br>• Sophisticated merge algorithm<br>• Improved edge case handling<br>• More robust validation<br>• Better handling of malformed tables<br><br>**Improvement:** Significantly improved handling of edge cases and multi-line content<br><br>**Scores:**<br>Correctness: 93<br>Completeness: 92<br>Sophistication: 94 | **Enhanced multi-line handling**<br>• Systematic approach to table processing<br>• Better handling of complex patterns<br>• Improved normalization<br>• More consistent style preservation<br><br>**Improvement:** Adopted Claude's enhanced validation and merging strategies<br><br>**Scores:**<br>Correctness: 88<br>Completeness: 84<br>Sophistication: 86 | **Concise implementation**<br>• More elegant function design<br>• Enhanced pattern detection<br>• Better edge case handling<br>• Improved cell merging<br>• Added detection for repeated separators<br><br>**Improvement:** More concise code while maintaining functionality<br><br>**Scores:**<br>Correctness: 87<br>Completeness: 83<br>Sophistication: 88 | **Improved pattern detection**<br>• Better separation of concerns<br>• More thorough validation<br>• Enhanced pattern detection<br>• More robust edge case handling<br><br>**Improvement:** Added systematic pattern detection similar to o1-pro and Claude<br><br>**Scores:**<br>Correctness: 83<br>Completeness: 78<br>Sophistication: 82 |
+| **Round 5** | **Hybrid best-of-all approach**<br>• Combines best elements from all models<br>• Most sophisticated pattern detection<br>• Excellent handling of all edge cases<br>• Balances preservation with correction<br>• Clean, modular implementation<br><br>**Improvement:** Synthesized strengths from all approaches into a cohesive solution<br><br>**Scores:**<br>Correctness: 95<br>Completeness: 93<br>Sophistication: 95 | **Well-refined pattern recognition**<br>• Robust validation<br>• Excellent pattern recognition<br>• Streamlined implementation<br>• Good handling of edge cases<br>• Balance of performance and readability<br><br>**Improvement:** Better handling of complex tables with varying patterns<br><br>**Scores:**<br>Correctness: 90<br>Completeness: 87<br>Sophistication: 89 | **Elegant preservation approach**<br>• Most elegant implementation<br>• Strong pattern detection<br>• Excellent style preservation<br>• Robust handling of edge cases<br>• Focused on minimal changes<br><br>**Improvement:** Better separation of concerns and cleaner code structure<br><br>**Scores:**<br>Correctness: 90<br>Completeness: 86<br>Sophistication: 91 | **Efficient minimal approach**<br>• Most concise implementation<br>• Strong validation<br>• Good pattern detection<br>• Efficient processing algorithm<br>• Focused functionality<br><br>**Improvement:** Achieved balance between conciseness and functionality<br><br>**Scores:**<br>Correctness: 87<br>Completeness: 82<br>Sophistication: 85 |
+
+### Key Architecture Components Across Implementations
+
+All implementations share these fundamental components, though their implementation details vary:
+
+1. **Table Block Identification**
+   - Identifying potential table blocks in markdown text
+   - Separating table content from non-table content
+
+2. **Continuation Line Merging**
+   - Handling multi-line content within cells
+   - Merging lines without pipe characters into previous rows
+
+3. **Table Validation**
+   - Checking if a table structure is already valid
+   - Validating separator rows
+
+4. **Pattern Detection**
+   - Identifying table patterns (e.g., repeated separators after each row)
+   - Adapting fixing strategy based on detected patterns
+
+5. **Row Normalization**
+   - Ensuring consistent column counts across all rows
+   - Handling excess columns by merging or truncating
+
+6. **Style Preservation**
+   - Maintaining original table styling (leading/trailing pipes)
+   - Minimal invasive changes
+
+7. **Table Reconstruction**
+   - Rebuilding tables with proper structure
+   - Ensuring header, separator, and data rows are correctly formatted
+
+### Evolution Trends
+
+1. **Increasing Sophistication**
+   - Solutions became more sophisticated with each round
+   - Better handling of edge cases and complex patterns
+
+2. **Cross-pollination of Ideas**
+   - Models adopted successful strategies from each other
+   - Claude's pattern detection, o1-pro's style preservation approach
+
+3. **Balance of Concerns**
+   - Later rounds balanced completeness with readability
+   - Trade-offs between comprehensiveness and maintainability
+
+4. **Convergence of Approaches**
+   - By Round 5, all implementations shared more similarities
+   - Core architecture patterns became standardized
+
+### Model Strengths
+
+- **Claude 3.7 Sonnet**: Most comprehensive solutions with sophisticated pattern detection and edge case handling
+- **Grok3**: Solid middle-ground between comprehensiveness and simplicity with good pattern recognition
+- **o1-pro**: Strong focus on style preservation with elegant, minimal-change approach
+- **o3-mini-high**: Most concise implementations with efficient processing approaches
+  
+### Key Insights from the Comparison
+
+Looking at the evolution of markdown table fixing solutions across rounds and models reveals several fascinating patterns:
+
+1. **Collaborative improvement**: Each model benefited from seeing other implementations. Claude 3.7 Sonnet showed the most comprehensive approach initially but all models improved by integrating ideas from each other.
+
+2. **Different priorities**: Each model had distinct strengths:
+   - Claude prioritized comprehensiveness and sophisticated pattern detection
+   - Grok3 balanced functionality with simplicity
+   - o1-pro focused on minimal-change style preservation
+   - o3-mini-high emphasized conciseness and efficiency
+
+3. **Convergence over time**: By round 5, the solutions became more similar as they incorporated the best elements from each other, demonstrating the power of the tournament approach.
+
+4. **Pattern recognition improvement**: A major advancement across all models was the development of sophisticated table pattern detection - particularly identifying tables with separators after each row versus standard tables.
+
+5. **Shared architecture**: Despite different implementations, all solutions evolved to include similar core components: block identification, continuation line merging, validation, pattern detection, normalization, style preservation, and reconstruction.
+
+Claude 3.7 Sonnet showed the most consistent improvement across rounds and produced the highest-rated final solution, but each model made valuable contributions to the collective knowledge pool. This tournament approach successfully leveraged the strengths of multiple AI models to create a solution better than any could produce individually.
+
 ## Conclusions
 
 I think this worked out really well. The final algorithm from Claude 3.7 Sonnet was able to do a pretty good job of fixing the tables, and I think it was able to do so in a way that was pretty close to the original intent of the tables. As smart and capable as these models are, it would be a lot to ask them to be able to make such an elaborate and sophisticated system all in a single shot. The chance to see multiple solutions from different "brains" and then collaboratively figure out how to best blend the ideas together really allowed the models to shine and show off their strengths. Besides being useful and generating better results than you could get from any of the models on their own, it's also fascinating from a purely theoretical perspective to see how the code evolves over time; in some cases, it's not a monotonic increase in code quality or performance, and there appeared to be some "model collapse" moments where the solution code would get markedly shorter and less sophisticated for a round or two, before recovering. Notably, Claude 3.7 Sonnet seemed to get longer and better with each round.
 
-The main drawback of this approach is how annoying it is to manually manage the entire process. That's why I decided to automate the entire thing using Andrew Ng's nice [`aisuite`](https://github.com/andrewyng/aisuite) package for Python, which abstracts away all the idiosyncrasies of the different models and their APIs, and allows you to easily run the same prompt on multiple models. Note that grok3 does not yet have an api, so I substituted that model with Google's `gemini-2.0-flash-thinking-exp-01-21` model instead.
+The main drawback of this approach is how annoying it is to manually manage the entire process. That's why I decided to automate the entire thing using Andrew Ng's nice [`aisuite`](https://github.com/andrewyng/aisuite) package for Python, which abstracts away all the idiosyncrasies of the different models and their APIs, and allows you to easily run the same prompt on multiple models. Note that grok3 does not yet have an api, so I substituted that model with Mistral's `mistral-large-latest` model instead. Also, I didn't feel like spending the money on the o1-pro API, so I used gpt-4o instead.
 
 Naturally, I [used](https://claude.ai/share/e0c0a9a8-223e-4588-93b5-cb4486a73f77) Claude 3.7 Sonnet to generate the entire code for the tournament automation, using the following prompt:
 
-```markdown
-First, carefully read the article. 
-
-Then, try to actually write the code mentioned at the end that fully automates the entire process for any given prompt (not just the prompt shown in the article about fixing a markdown file). The code should generate all the same folders and files with similar names based on patterns specified in the master python file. Attached is some documentation on aisuite showing how to use it.
-
-Note that grok3 does not yet have an api, so for that model, substitute it with the model gemini-2.0-flash-thinking-exp-01-21
-
-```
+>First, carefully read the article.
+>
+>Then, try to actually write the code mentioned at the end that fully automates the entire process for any given prompt (not just the prompt shown in the article about fixing a markdown file). The code should generate all the same folders and files with similar names based on patterns specified in the master python file. Attached is some documentation on aisuite showing how to use it.
+>
+>Note that grok3 does not yet have an api, so for that model, substitute it with the model mistral-large-latest
 
 And I attached this README file and the a couple of the `aisuite` files (the main readme file, the sample .env file, and an example iPython notebook) to the prompt.
 
@@ -338,4 +432,11 @@ I did need to follow up with this comment, mercilessly mocking it for its initia
 
 > come on, that's awful and WAY too simple. Try again and do it PROPERLY AND THOROUGHLY!!! DO NOT DISAPPOINT ME AGAIN WITH A LAME COP OUT ATTEMPT LIKE THIS!!!
 
-But then it produced [`llm_tournament.py`]() in a single shot (well, it did have a single character escaping bug that it fixed) that did everything I needed.
+But then it produced [`llm_tournament.py`](https://github.com/Dicklesworthstone/llm-tournament) in a single shot (well, it did have a single character escaping bug that it fixed) that did everything I needed. OK, OK, I did need to fix a few more bugs (working with the Google API was too much brain damage so I had to switch to Mistral instead, and I had it skip the request if there was already a valid response saved in the folder; I also made the code for finding a code block more robust), but it was a pretty impressive performance overall.
+
+But seriously, it works so well! You just put your coding prompt in the `challenge_prompt.md` file and run the script with:
+
+```bash
+python llm_tournament.py --prompt challenge_prompt.md --test-file messy_csv_sample.csv
+```
+
