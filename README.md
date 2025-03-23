@@ -1,5 +1,5 @@
 
-# LLM Multi-Round Coding Tournament: Getting the Best of All Worlds
+# LLM Multi-Round Coding Tournament
 
 *Written on 3/22/2025 by Jeffrey Emanuel*
 
