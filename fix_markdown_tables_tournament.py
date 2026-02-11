@@ -73,12 +73,11 @@ class Claude37_round_1:
         if repeated_separators:
             # This is a table with a separator row after each data row
             # We'll fix by removing all but the first separator
-            header_row = lines[0]
+            lines[0]
             first_separator = lines[separator_indices[0]]
             data_rows = []
             
             # Collect all data rows, skipping separator rows
-            current_index = 0
             for i, line in enumerate(lines):
                 # Skip all separator rows except the first one
                 if i in separator_indices and i != separator_indices[0]:
